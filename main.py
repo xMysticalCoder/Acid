@@ -1,5 +1,8 @@
 #Connected to github :D
-
+# Go to version control for more info
+# PLEASE add a comit every time you add something.
+# Link to github: https://github.com/xMysticalCoder/Acid.
+# I invited NILL2021 (I think thats you)
 
 
 print("Acid Version 1.01")
