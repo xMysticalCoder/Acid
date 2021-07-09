@@ -1,0 +1,55 @@
+import os
+print("This is Acid version 0.1 IDLE. Read the documentation, and type ~ulog for updates")
+
+def readcode():
+  if code.startswith("log(\""):
+    print(code[5:-3])
+  elif code.startswith("log("):
+     print("Syntax error - Variable undefined \n has it been implemented yet? Check the update log. (~ulog)")
+  ##############################################
+  elif code.startswith("var, \" val \""):
+     name = code[5:-2] 
+     val = code[13:-2]
+     print(name + " " + str(val) #for testing purposes
+ ###########################################################
+  elif code.startswith("capstring(\""):
+    print(code[11:-3].upper())
+  elif code.startswith("capvar("):
+    print("Syntax error - Variable undefined \n has it been implemented yet? Check the update log. (~ulog)")
+ ############################################################
+  elif code.startswith("lowstring(\""):
+    print(code[11:-3].lower())
+  elif code.startswith("lowvar("):
+    print("Syntax error - Variable undefined \n has it been implemented yet? Check the update log. (~ulog)")
+      ################################################ 
+  elif code.startswith("++ "):
+   r = None
+   ##########################
+  elif code.startswith("~ulog"):
+    print("Acid Version 0.1.1\n- Comments are now available by typing in ++.")
+    
+  else:
+    print("Code not recognized.")
+os.remove("code.acid")
+
+file = open("code.acid", "a")
+
+while True:
+    code = input(">> ")
+    if code.lower() == "#run":
+      break
+    else: 
+      with open("code.acid", "a") as file:
+        file.writelines(code)
+        file.writelines("\n")
+
+file.close()
+file = open("code.acid", "r")
+myFile = file.readlines()
+
+
+for i in myFile:
+  code = i
+  readcode()
+
+#AS OF NOW YOU CANT USE VARIABLES, YOU CAN ONLY CREATE THEM, WHICH ALSO DOESNT WORK.
