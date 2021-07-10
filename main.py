@@ -1,9 +1,12 @@
 #Connected to github :D
 # Go to version control for more info
 # PLEASE add a comit every time you add something.
-# Link to github: https://github.com/xMysticalCoder/Acid.
+# Link to github: ://github.com/xMysticalCoder/acid.
 # I invited NILL2021 (I think thats you)
+class colors:
 
+  syntax_error = '\033[91m'
+  Reset = '\033[0m'
 
 print("Acid Version 1.01")
 variables = dict()
@@ -19,11 +22,11 @@ def readcode():
     try:
       print(variables[e])
     except:
-      print("No variable \"", e, "\" found")
+      print(colors.syntax_error + "No variable \"", e, "\" found" + colors.Reset)
 
     
   else:
-    print("Syntax not understood.")
+    print(colors.syntax_error + "Syntax not understood." + colors.Reset)
 
 while True:
   code = input(">> ")
